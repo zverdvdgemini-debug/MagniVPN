@@ -49,7 +49,7 @@ jobs:
 
       - name: make draftBuildCode
         id: draftBuildCode
-        run: echo "::set-output name=datetime::$(date +'%d.%H.%M')"
+        run: echo "datetime=$(date +'%d.%H.%M')" >> $GITHUB_OUTPUT
 
 
   build:
@@ -136,7 +136,7 @@ jobs:
         if: startsWith(matrix.platform,'android')
         uses: gradle/actions/setup-gradle@v3
         with:
-          gradle-version: 7.5
+          gradle-version: 8.3
       - name: Setup dependencies
         run: |
           make ${{ matrix.platform }}-install-dependencies
