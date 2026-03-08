@@ -18,14 +18,14 @@ IOS_OUT=ios$(SEP)Frameworks
 DESKTOP_OUT=libcore$(SEP)bin
 GEO_ASSETS_DIR=assets$(SEP)core
 
-CORE_PRODUCT_NAME=hiddify-core
-CORE_NAME=$(CORE_PRODUCT_NAME)
+CORE_PRODUCT_NAME=hiddify
+CORE_NAME=hiddify-lib
 LIB_NAME=libcore
 
 ifeq ($(CHANNEL),prod)
-	CORE_URL=https://github.com/hiddify/hiddify-next-core/releases/download/v$(core.version)
+	CORE_URL=https://github.com/hiddify/hiddify-core/releases/latest/download
 else
-	CORE_URL=https://github.com/hiddify/hiddify-next-core/releases/download/draft
+	CORE_URL=https://github.com/hiddify/hiddify-core/releases/latest/download
 endif
 
 ifeq ($(CHANNEL),prod)
