@@ -5,7 +5,7 @@ SEP :=/
 
 ifeq ($(OS),Windows_NT)
     ifeq ($(IS_GITHUB_ACTIONS),)
-		MKDIR := -mkdir
+		MKDIR := -mkdirf
 		RM := rmdir /s /q
 		SEP:=\\
 	endif
@@ -143,7 +143,7 @@ gen_translations: #generating missing translations using google translate
 android-release: android-apk-release
 
 android-apk-release:
-	flutter build apk --target $(TARGET) $(BUILD_ARGS) --target-platform android-arm,android-arm64,android-x64 --split-per-abi --verbose  
+	flutter build apk --target $(TARGET) $(BUILD_ARGS) --target-platform android-arm,android-arm64,android-x64 --split-per-abi --debug --verbose  
 	ls -R build/app/outputs
 
 android-aab-release:
